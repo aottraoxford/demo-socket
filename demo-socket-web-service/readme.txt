@@ -1,0 +1,3 @@
+1/ mvn liquibase:diff -Pdev -Dliquibase.url="jdbc:postgresql://localhost:5432/dev_db" -Dliquibase.username="postgres" -Dliquibase.password="12345" -Dliquibase.referenceUrl="jdbc:postgresql://localhost:5432/local_db" -Dliquibase.referenceUsername="postgres" -Dliquibase.referencePassword="12345"
+2/ mvn clean package -DskipTests
+3/ mvn liquibase:update -Pdev -Dliquibase.url="jdbc:postgresql://localhost:5432/dev_db" -Dliquibase.username="postgres" -Dliquibase.password="12345"

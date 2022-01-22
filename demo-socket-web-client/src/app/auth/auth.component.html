@@ -1,0 +1,61 @@
+<div class="login centered-element" *ngIf="isLogin">
+    <p-card header="Login">
+        <form autocomplete="off" [formGroup]="form">
+            <div class="p3-b">
+                <span class="p-float-label">
+                    <input id="float-input" class="full-w" type="text" pInputText formControlName="username"> 
+                    <label for="float-input">Username</label>
+                </span>
+            </div>
+            <div class="p2-b">
+                <span class="p-float-label">
+                    <input id="float-input" class="full-w" type="password" autocomplete="new-password" pInputText formControlName="password"> 
+                    <label for="float-input">Password</label>
+                </span>
+            </div>
+            <div class="text-c">
+                <a href="" (click)="toRegister()">Register with email.</a>
+            </div>
+            <div class="p2-t">
+                <button pButton type="button" label="Login" (click)="onLogin()" ></button>
+            </div>
+        </form>
+    </p-card>
+</div>
+
+
+<div class="register centered-element" *ngIf="!isLogin">
+    <p-card header="Register">
+        <form autocomplete="off" [formGroup]="form">
+            <div class="p3-b">
+                <span class="p-float-label">
+                    <input id="float-input" class="full-w p-invalid" type="text" pInputText formControlName="username"> 
+                    <label for="float-input">Username</label>
+                </span>
+            </div>
+            <div class="p3-b">
+                <span class="p-float-label">
+                    <input id="float-input" class="full-w" type="password" autocomplete="new-password" pInputText formControlName="password"> 
+                    <label for="float-input">Password</label>
+                </span>
+            </div>
+            <div class="p2-b">
+                <span class="p-float-label">
+                    <input id="float-input" class="full-w" type="password" autocomplete="new-password" pInputText formControlName="confirmPassword"> 
+                    <label for="float-input">Confirm Password</label>
+                </span>
+            </div>
+            <div class="text-c">
+                <a href="" (click)="toLogin()">Login with username.</a>
+            </div>
+            <div class="p2-t">
+                <button pButton type="button" label="Register" (click)="onRegister()"></button>
+            </div>
+        </form>
+    </p-card>
+</div>
+
+
+<p-dialog header="ERROR" [(visible)]="display">
+    {{this.message}}
+</p-dialog>
