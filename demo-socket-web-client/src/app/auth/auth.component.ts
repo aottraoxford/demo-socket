@@ -16,6 +16,7 @@ export class AuthComponent implements OnInit {
   form: FormGroup;
   display = false;
   message = null;
+  statusCode = 400;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.form = this.fb.group({
@@ -45,7 +46,9 @@ export class AuthComponent implements OnInit {
       this.display = true;
       return of([]);
     })).subscribe((res: any) => {
-      console.log(res)
+      this.message = res.message
+      this.statusCode = res.status
+      this.display = true;
     })
     
   }
@@ -57,7 +60,9 @@ export class AuthComponent implements OnInit {
       this.display = true;
       return of ([]);
     })).subscribe((res: any) => {
-      console.log(res)
+      this.message = res.message
+      this.statusCode = res.status
+      this.display = true;
     })
     
   }
