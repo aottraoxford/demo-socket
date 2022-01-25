@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.p-menu {
+    border: none;
+    width: 100%;
+}
 .centered-element {
     margin: 0;
     position: absolute;
@@ -9,6 +17,16 @@
 
 .full-w {
     width: 100%;
+}
+.p1-t {
+    padding-top: 8px;
+}
+.p1-l {
+    padding-left: 8px;
+}
+
+.p1-r {
+    padding-right: 8px;
 }
 
 .p2-b {

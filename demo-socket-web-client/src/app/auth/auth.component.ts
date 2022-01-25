@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 import { of } from 'rxjs';
 
@@ -17,7 +18,7 @@ export class AuthComponent implements OnInit {
   display = false;
   message = null;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.form = this.fb.group({
       username: new FormControl,
       password: new FormControl,
@@ -25,7 +26,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toLogin() {
     this.form.reset();
@@ -57,7 +58,7 @@ export class AuthComponent implements OnInit {
       this.display = true;
       return of ([]);
     })).subscribe((res: any) => {
-      console.log(res)
+      this.router.navigateByUrl("dashboard")
     })
     
   }

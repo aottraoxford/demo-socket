@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { PrimeNGModule } from './primeng.module';
 import { RoutingModule } from './routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

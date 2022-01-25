@@ -1,0 +1,25 @@
+<div style="position: absolute;width: 100%;height: 100%;" class="p1-t">
+    <div class="left-area p1-l p1-r" style="border-right: 1px solid #E7E7E7;">
+        <div style="width: 10%; float: left;">
+            <button (click)="openSlider()" pButton pRipple type="button" icon="pi pi-align-justify" class="p-button-rounded p-button-text"></button>
+        </div>
+        <div style="width: 90%;float: left;">
+            <input class="full-w" type="text" pInputText placeholder="Search">
+        </div>
+    </div>
+
+    <div class="right-area">
+        <div class="centered-element">Select a chat to start messaging</div>
+    </div>
+</div>
+
+<p-sidebar style="padding: 0;" [(visible)]="display" styleClass="p-sidebar-sm" [showCloseIcon]="false">
+    <div>
+        username
+    </div>
+    <p-divider></p-divider>
+    <div>
+        <p-menu [model]="items"></p-menu>
+    </div>
+</p-sidebar>
+

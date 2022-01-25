@@ -1,0 +1,13 @@
+.left-area {
+    width: 30%;
+    float: left;
+    min-height: 100%;
+}
+
+.right-area {
+    width: 70%;
+    float: left;
+    position: relative;
+    min-height: 100%;
+    background-color: #FCFCFC;
+}

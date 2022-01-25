@@ -18,4 +18,8 @@ export class AuthService {
   login(obj: any) {
     return this.httpClient.post<any>(`${this.url}/auth`, obj)
   }
+
+  test() {
+    return this.httpClient.get<any>(`${this.url}/user`)
+  }
 }
