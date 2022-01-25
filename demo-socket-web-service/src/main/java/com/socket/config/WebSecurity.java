@@ -70,6 +70,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and().authorizeRequests().antMatchers(HttpMethod.POST,"/user","/auth").permitAll()
                 .and().authorizeRequests().anyRequest().authenticated();
 
+
         // Add our custom JWT security filter
         http.addFilterBefore(requestFilter(), UsernamePasswordAuthenticationFilter.class);
 
