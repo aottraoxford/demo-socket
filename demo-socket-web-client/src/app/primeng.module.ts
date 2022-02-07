@@ -9,8 +9,13 @@ import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from 'primeng/menubar';
 import { DividerModule } from 'primeng/divider';
 import { MenuModule } from 'primeng/menu';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { ToastModule } from 'primeng/toast';
+import { TableModule } from 'primeng/table';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
+import { ImageModule } from 'primeng/image';
 
-const modules = [MenuModule,AccordionModule, CardModule, InputTextModule, ButtonModule, DialogModule, SplitterModule, SidebarModule, MenubarModule, DividerModule];
+const modules = [ImageModule, VirtualScrollerModule, ToastModule, TableModule ,DynamicDialogModule, MenuModule,AccordionModule, CardModule, InputTextModule, ButtonModule, DialogModule, SplitterModule, SidebarModule, MenubarModule, DividerModule];
 @NgModule({
     imports: modules,
     exports: modules

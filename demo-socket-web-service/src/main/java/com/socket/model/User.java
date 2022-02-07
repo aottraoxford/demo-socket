@@ -26,15 +26,18 @@ public class User extends UserDateAudit {
 
     private String lastName;
 
-    @NotNull(message = "username required")
-    @NotEmpty(message = "username can't be empty")
-    @NotBlank(message = "username can't be blank")
     @Column(unique = true)
     private String username;
 
     private String password;
 
     private LocalDate dateOfBirth;
+
+    @NotNull(message = "username required")
+    @NotEmpty(message = "username can't be empty")
+    @NotBlank(message = "username can't be blank")
+    @Column(unique = true)
+    private String phoneNumber;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<UserRole> userRoles = new HashSet<>();

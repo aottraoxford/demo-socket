@@ -9,12 +9,16 @@ import { AuthComponent } from './auth/auth.component';
 import { PrimeNGModule } from './primeng.module';
 import { RoutingModule } from './routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactList } from './dashboard/contact-list';
+import { DialogService } from 'primeng/dynamicdialog';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    DashboardComponent
+    DashboardComponent,
+    ContactList
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RoutingModule,
     PrimeNGModule
   ],
-  providers: [],
+  providers: [DialogService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

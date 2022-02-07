@@ -13,7 +13,7 @@ public class SignIn {
     @NotNull
     @NotEmpty
     @NotBlank
-    private String username;
+    private String phoneNumber;
     @NotNull
     @NotEmpty
     @NotBlank

@@ -11,3 +11,7 @@
     min-height: 100%;
     background-color: #FCFCFC;
 }
+
+.p-button.p-button-text {
+    color: black;
+}

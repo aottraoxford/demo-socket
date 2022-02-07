@@ -19,12 +19,14 @@ public class UserPrincipal implements UserDetails {
     private Long id;
     private String username;
     private String password;
+    private String phoneNumber;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserPrincipal(Long id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrincipal(Long id, String username, String password,String phoneNumber, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.phoneNumber = phoneNumber;
         this.authorities = authorities;
     }
 
@@ -36,6 +38,7 @@ public class UserPrincipal implements UserDetails {
                 user.getId(),
                 user.getUsername(),
                 user.getPassword(),
+                user.getPhoneNumber(),
                 authorities
         );
     }

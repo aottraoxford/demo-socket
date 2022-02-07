@@ -21,7 +21,7 @@ export class AuthComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.form = this.fb.group({
-      username: new FormControl,
+      phoneNumber: new FormControl("+855"),
       password: new FormControl,
       confirmPassword: new FormControl
     });
@@ -31,11 +31,17 @@ export class AuthComponent implements OnInit {
 
   toLogin() {
     this.form.reset();
+    this.form.patchValue({
+      phoneNumber: "+855"
+    });
     this.isLogin = true;
     return false;
   }
   toRegister() {
-    this.form.reset();
+    this.form.reset()
+    this.form.patchValue({
+      phoneNumber: "+855"
+    });
     this.isLogin = false;
     return false;
   }

@@ -14,5 +14,5 @@ public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificat
     @Query(value = "SELECT * FROM users WHERE id IN(:ids)", nativeQuery = true)
     List<User> findAllInId(@Param("ids") List<Long> listId);
 
-    User findByUsername(String username);
+    User findByPhoneNumber(String username);
 }

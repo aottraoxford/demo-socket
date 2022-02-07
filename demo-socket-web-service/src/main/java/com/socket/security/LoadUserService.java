@@ -15,7 +15,7 @@ public class LoadUserService implements UserDetailsService {
     private UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(s);
+        User user = userRepository.findByPhoneNumber(s);
         if (user == null) throw new Error(404, "username " + s + " not found");
         if (user.getPassword() == null) throw new Error(403, "password not yet register");
         if (user.getUserRoles().isEmpty()) throw new Error( 403, "user need to assign role");

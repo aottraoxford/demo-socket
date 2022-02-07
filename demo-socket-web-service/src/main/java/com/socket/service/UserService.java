@@ -47,6 +47,7 @@ public class UserService implements BaseService<User> {
 
     @Override
     public User add(User t) {
+        t.setPhoneNumber(t.getPhoneNumber().replaceAll("\\s",""));
         if (t.getPassword()!=null) {
             t.setPassword(passwordEncoder.encode(t.getPassword()));
         }
@@ -106,7 +107,7 @@ public class UserService implements BaseService<User> {
 
     public JwtToken signIn(SignIn signIn) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(signIn.getUsername(),signIn.getPassword())
+                new UsernamePasswordAuthenticationToken(signIn.getPhoneNumber(),signIn.getPassword())
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
         JwtToken jwtToken = new JwtToken();
